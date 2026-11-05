@@ -1,0 +1,78 @@
+:root {
+    --color-primario: #002b49;
+    --color-secundario: #0284c7;
+    --color-acento: #000000;
+    --color-fondo-suave: #f8fafc;
+
+    --radio-borde-card: 14px;
+    --radio-borde-btn: 50px;
+
+    --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --sombra-elevada: 0 16px 32px -4px rgba(0, 43, 73, 0.12);
+}
+
+/* =======================================================
+   Tarjetas de Servicios:
+   Al retirar las clases utilitarias de Bootstrap (.bg-light,
+   .rounded, .border, .shadow-sm) del HTML, un selector de clase
+   limpio (.tarjeta-servicio) controla todos los estilos sin
+   necesidad de sobre-especificación ni !important.
+   ======================================================= */
+.tarjeta-servicio {
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radio-borde-card);
+    background-color: #ffffff;
+    box-shadow: var(--sombra-suave);
+    cursor: pointer;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.25s ease;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-elevada);
+    border-color: var(--color-acento);
+}
+
+.tarjeta-servicio i {
+    transition: transform 0.25s ease, color 0.25s ease;
+    display: inline-block;
+}
+
+/* Nota: !important es necesario aquí únicamente porque los iconos
+   tienen clases de color utilitarias de Bootstrap (text-primary, etc.)
+   en el HTML, las cuales usan !important por diseño. */
+.tarjeta-servicio:hover i {
+    transform: scale(1.15);
+    color: var(--color-acento) !important;
+}
+
+/* =======================================================
+   Botón Personalizado:
+   Configuración basada en las variables CSS nativas de Bootstrap 5
+   para soportar :hover, :active y :focus correctamente.
+   ======================================================= */
+.boton-prueba {
+    --bs-btn-bg: var(--color-acento);
+    --bs-btn-border-color: var(--color-acento);
+    --bs-btn-hover-bg: #333333;
+    --bs-btn-hover-border-color: #e55a2b;
+    --bs-btn-active-bg: #cc4f24;
+    --bs-btn-active-border-color: #cc4f24;
+    --bs-btn-color: #ffffff;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-active-color: #ffffff;
+
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: var(--radio-borde-btn);
+    padding: 10px 24px;
+    transition: all 0.25s ease;
+}
+
+.boton-prueba:hover {
+    transform: translateY(-2px);
+}
